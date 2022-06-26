@@ -1,0 +1,14 @@
+<a class="banner" id="banner" rel="noopener noreferrer" target="_blank">
+    <p>
+        {{{t "banner"}}}
+    </p>
+</a>
+
+{{#contentFor "scripts"}}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bannerAnchorEl = document.getElementById('banner');
+        bannerAnchorEl.href = main['banner-url'];
+    });
+</script>
+{{/contentFor}}

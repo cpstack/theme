@@ -1,0 +1,17 @@
+{{!-- Everything inside the #author tags pulls data from the post --}}
+
+<div class='learn-cta-row'>
+    <p>
+        {{t "learn-to-code-cta"}} <a class="cta-button" id="learn-to-code-cta" rel="noopener noreferrer" target="_blank">{{t "learn-to-code-cta-btn"}}</a>
+    </p>
+</div>
+
+{{#contentFor "scripts"}}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const learnToCodeCtaAnchorEl = document.getElementById('learn-to-code-cta');
+
+        learnToCodeCtaAnchorEl.href = main['learn-to-code-cta-url'];
+    });
+</script>
+{{/contentFor}}

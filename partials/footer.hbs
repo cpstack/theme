@@ -1,0 +1,111 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-top">
+            <div class="footer-desc-col">
+                <p>
+                    {{t "footer-desc-1"}}
+                </p>
+                <p>
+                    {{t "footer-desc-2"}}
+                </p>
+                <p>
+                    {{t "footer-desc-3"}}
+                </p>
+                <p class="footer-donation">
+                    {{{t "footer-donation"}}}
+                </p>
+            </div>
+            <div class="trending-guides">
+                <div class="col-header">{{t "footer-trending-guides-header"}}</div>
+                <div class="trending-guides-row">
+                    <div class="footer-col footer-col-1">
+                        <a id="article0" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article1" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article2" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article3" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article4" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article5" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article6" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article7" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article8" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article9" rel="noopener noreferrer" target="_blank"></a>
+                    </div>
+                    <div class="footer-col footer-col-2">
+                        <a id="article10" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article11" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article12" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article13" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article14" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article15" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article16" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article17" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article18" rel="noopener noreferrer" target="_blank"></a>
+                        <a id="article19" rel="noopener noreferrer" target="_blank"></a>
+                    </div>
+                    <div class="footer-col footer-col-3">
+                        <div class="footer-left">
+                            <a id="article20" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article21" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article22" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article23" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article24" rel="noopener noreferrer" target="_blank"></a>
+                        </div>
+
+                        <div class="footer-right">
+                            <a id="article25" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article26" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article27" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article28" rel="noopener noreferrer" target="_blank"></a>
+                            <a id="article29" rel="noopener noreferrer" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='footer-bottom'>
+            <div class="col-header">{{t "footer-our-nonprofit-header"}}</div>
+            <div class="footer-divider"></div>
+            <div class="our-nonprofit">
+                <a id="about" rel="noopener noreferrer" target="_blank">{{t "footer-about"}}</a>
+                <a id="alumni" rel="noopener noreferrer" target="_blank">{{t "footer-alumni"}}</a>
+                <a id="open-source" rel="noopener noreferrer" target="_blank">{{t "footer-open-source"}}</a>
+                <a id="shop" rel="noopener noreferrer" target="_blank">{{t "footer-shop"}}</a>
+                <a id="support" rel="noopener noreferrer" target="_blank">{{t "footer-support"}}</a>
+                <a id="sponsors" rel="noopener noreferrer" target="_blank">{{t "footer-sponsors"}}</a>
+                <a id="honesty" rel="noopener noreferrer" target="_blank">{{t "footer-honesty"}}</a>
+                <a id="coc" rel="noopener noreferrer" target="_blank">{{t "footer-coc"}}</a>
+                <a id="privacy" rel="noopener noreferrer" target="_blank">{{t "footer-privacy"}}</a>
+                <a id="tos" rel="noopener noreferrer" target="_blank">{{t "footer-tos"}}</a>
+                <a id="copyright" rel="noopener noreferrer" target="_blank">{{t "footer-copyright"}}</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{{#contentFor "scripts"}}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const { trending, ...otherUrls } = footer;
+        const footerDonationAnchorEl = document.getElementById('footer-donation');
+
+        Object.keys(trending).forEach(key => {
+            const anchorId = key.replace(/link|title/, '');
+            const trendingAnchorEl = document.getElementById(anchorId);
+
+            if (key.includes('link')) {
+                trendingAnchorEl.href = trending[key]
+            } else if (key.includes('title')) {
+                trendingAnchorEl.textContent = trending[key];
+            }
+        });
+
+        Object.keys(otherUrls).forEach(key => {
+            const footerAnchorEl = document.getElementById(key);
+
+            footerAnchorEl.href = otherUrls[key];
+        });
+
+        footerDonationAnchorEl.href = main['donate-url'];
+    });
+</script>
+{{/contentFor}}
