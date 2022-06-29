@@ -39,7 +39,7 @@ into the {body} of the default.hbs template --}}
                 from includes/byline-multiple.hbs, otherwise, we just use the
                 default byline. --}}
 
-                {{#has author="freeCodeCamp.org"}}
+                {{#has author="www.developernoon.com"}}
                 {{else}}
                 {{> "byline-single-no-bio"}}
                 {{/has}}
@@ -65,7 +65,7 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <section class="post-full-content">
-                {{#has author="freeCodeCamp.org"}}
+                {{#has author="www.developernoon.com"}}
                 <div class="post-content medium-migrated-article">
                     {{content}}
                 </div>
@@ -76,7 +76,7 @@ into the {body} of the default.hbs template --}}
                 {{/has}}
                 <hr />
 
-                {{#has author="freeCodeCamp.org"}}
+                {{#has author="www.developernoon.com"}}
                 {{else}}
                 <div class="post-full-author-header">
                     {{> "byline-single"}}

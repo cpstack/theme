@@ -6,17 +6,17 @@
     if (showCommentsList.includes(`{{@site.lang}}`)) {
       const hostname = window.location.hostname;
       const discourseEmbedMap = {
-        'www.freecodecamp.org': {
-          file: 'https://forum.freecodecamp.org/srv/status',
-          discourseUrl: 'https://forum.freecodecamp.org/'
+        '': {
+          file: '',
+          discourseUrl: ''
         },
-        'chinese.freecodecamp.org': {
-          file: 'https://chinese.freecodecamp.org/forum/srv/status',
-          discourseUrl: 'https://chinese.freecodecamp.org/forum/',
+        '': {
+          file: '',
+          discourseUrl: '',
         },
         'dev': {
-          file: 'https://forum.freecodecamp.dev/srv/status',
-          discourseUrl: 'https://forum.freecodecamp.dev/'
+          file: '',
+          discourseUrl: ''
         },
       };
       const discourseEmbedInfo = discourseEmbedMap[hostname] ? discourseEmbedMap[hostname] : discourseEmbedMap['dev'];
